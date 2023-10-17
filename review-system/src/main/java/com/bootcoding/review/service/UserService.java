@@ -28,7 +28,19 @@ public class UserService {
         return  userRepository.getAllUser();
     }
 
-//    public User getById(int id) {
-//        return userRepository.getById(id);
-//    }id
+    public User getById(int id) {
+        return userRepository.getById(id);
+    }
+
+    public String deleteById(int id) {
+       return  userRepository.deleteById(id);
+    }
+
+    public User updateById(int id, User user) {
+        return userRepository.updateById(id,user);
+    }
+
+    public List<User> insertMultipleUser(List<User> users) {
+        return  userRepository.insertMultipleUser(users);
+    }
 }

@@ -50,4 +50,23 @@ public class ReviewRepository {
             return null;
         }
     }
+    public Review getBYId(int id) {
+        try{
+            String sql="SELECT * FROM review WHERE ID=?";
+            return jdbcTemplate.queryForObject(sql,(rs, rowNum) -> {
+                Review review =new Review();
+                review.setUserId(rs.getInt(1));
+                review.setTotalCount(rs.getInt(2));
+                review.setOneStar(rs.getInt(3));
+                review.setTwoStar(rs.getInt(4));
+                review.setThreeStar(rs.getInt(5));
+                review.setFourStar(rs.getInt(6));
+                review.setFiveStar(rs.getInt(7));
+                return  review;
+            });
+        }catch (Exception exception){
+            exception.printStackTrace();
+            return  null;
+        }
+    }
 }

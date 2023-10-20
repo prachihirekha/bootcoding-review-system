@@ -29,4 +29,8 @@ public class ReviewService {
     public List<Review> getAllReview() {
         return  reviewRepository.getAllReview();
     }
+
+    public Review getById(int id) {
+        return  reviewRepository.getBYId(id);
+    }
 }

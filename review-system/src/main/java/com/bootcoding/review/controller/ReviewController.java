@@ -4,10 +4,7 @@ import com.bootcoding.review.model.Review;
 import com.bootcoding.review.service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,6 +20,10 @@ public class ReviewController {
     @GetMapping("/all_review")
     public List<Review> getAllReview(){
         return reviewService.getAllReview();
+    }
+    @GetMapping("/review/{id}")
+    public Review getById(@PathVariable int id){
+        return  reviewService.getById(id);
     }
 
 

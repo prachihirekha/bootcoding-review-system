@@ -17,19 +17,19 @@ public class CourseService {
         return "inserted";
     }
 
-    public List<Course> getAllCourse() {
-        return courseRepository.getAllCourse();
-    }
-
-    public Course getById(int id) {
-        return  courseRepository.getById(id);
-    }
-
-    public String deleteById(int id) {
-        return courseRepository.deleteById(id);
-    }
-
-    public Course updateById(int id, Course course) {
-        return courseRepository.updateById(id,course);
-    }
+//    public List<Course> getAllCourse() {
+//        return courseRepository.getAllCourse();
+//    }
+//
+//    public Course getById(int id) {
+//        return  courseRepository.getById(id);
+//    }
+//
+//    public String deleteById(int id) {
+//        return courseRepository.deleteById(id);
+//    }
+//
+//    public Course updateById(int id, Course course) {
+//        return courseRepository.updateById(id,course);
+   // }
 }

@@ -24,52 +24,52 @@ public class CourseRepository {
         }
     }
 
-    public List<Course> getAllCourse() {
-        try{
-            String sql="SELECT * FROM public.course";
-            return jdbcTemplate.query(sql,(rs, rowNum) -> {
-                Course course = new Course();
-                course.setName(rs.getString("name"));
-                return  course;
-            });
-        }catch (Exception e){
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    public Course getById(int id) {
-        try{
-            String sql ="SELECT * FROM course WHERE ID="+id;
-            return jdbcTemplate.queryForObject(sql,(rs, rowNum) -> {
-                Course course = new Course();
-                course.setName(rs.getString("name"));
-                return course;
-            });
-        }catch (Exception e){
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    public String deleteById(int id) {
-        try {
-            String sql="DELETE FROM course WHERE ID=?";
-            jdbcTemplate.update(sql,id);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        return "delete successfully";
-    }
-
-    public Course updateById(int id, Course course) {
-        try{
-            String sql="UPDATE course SET name=? WHERE ID=?";
-            jdbcTemplate.update(sql, course.getName(),id);
-            return course;
-        }catch (Exception exception){
-            exception.printStackTrace();
-            return null;
-        }
-    }
+//    public List<Course> getAllCourse() {
+//        try{
+//            String sql="SELECT * FROM public.course";
+//            return jdbcTemplate.query(sql,(rs, rowNum) -> {
+//                Course course = new Course();
+//                course.setName(rs.getString("name"));
+//                return  course;
+//            });
+//        }catch (Exception e){
+//            e.printStackTrace();
+//            return null;
+//        }
+//    }
+//
+//    public Course getById(int id) {
+//        try{
+//            String sql ="SELECT * FROM course WHERE ID="+id;
+//            return jdbcTemplate.queryForObject(sql,(rs, rowNum) -> {
+//                Course course = new Course();
+//                course.setName(rs.getString("name"));
+//                return course;
+//            });
+//        }catch (Exception e){
+//            e.printStackTrace();
+//            return null;
+//        }
+//    }
+//
+//    public String deleteById(int id) {
+//        try {
+//            String sql="DELETE FROM course WHERE ID=?";
+//            jdbcTemplate.update(sql,id);
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+//        return "delete successfully";
+//    }
+//
+//    public Course updateById(int id, Course course) {
+//        try{
+//            String sql="UPDATE course SET name=? WHERE ID=?";
+//            jdbcTemplate.update(sql, course.getName(),id);
+//            return course;
+//        }catch (Exception exception){
+//            exception.printStackTrace();
+//            return null;
+//        }
+//    }
 }

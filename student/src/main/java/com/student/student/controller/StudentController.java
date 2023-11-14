@@ -15,7 +15,12 @@ public class StudentController {
     public String insertStudent(@RequestBody Student student){
          return  studentService.insertStudent(student);
      }
-     @GetMapping("/students")
+     @PostMapping("/multiple/student")
+    public String insertMultiple(@RequestBody List<Student>students){
+         return studentService.insertMultiple(students);
+     }
+
+     @GetMapping("/get/students")
     public List<Student> getAllStudent(){
          return studentService.getAllStudent();
      }
